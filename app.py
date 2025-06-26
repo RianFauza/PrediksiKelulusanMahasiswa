@@ -29,9 +29,8 @@ if "welcome_sharingan" not in st.session_state:
         </div>
     """, height=700)
 
-    if st.button("▶️ Mulai Aplikasi"):
-        st.session_state.welcome_sharingan = True
-        st.rerun()
+    st.session_state.welcome_sharingan = True
+    st.rerun()
     st.stop()
 
 
