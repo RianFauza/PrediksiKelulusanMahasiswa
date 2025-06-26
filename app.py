@@ -8,9 +8,32 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit.components.v1 as components
+import base64
 
 # Konfigurasi halaman
 st.set_page_config(page_title="📊 Dashboard Kelulusan Mahasiswa", layout="wide", initial_sidebar_state="expanded")
+if "welcome_sharingan" not in st.session_state:
+    components.html(f"""
+        <style>
+        .zoom-container {{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: zoomIn 3s ease-out forwards;
+        }}
+        </style>
+
+        <div class='zoom-container'>
+            <img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnV6amMwM3U1cmc2YjZlbmJuMm8weWNoaXlqbWRjcGtqMWttYjY1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K9GWAtJoaaIy7vSCW8/giphy.gif' style='width: 80vw; max-width: 560px;'/>
+        </div>
+    """, height=700)
+
+    import time
+    time.sleep(3)
+    st.session_state.welcome_sharingan = True
+    st.experimental_rerun()
+
 
 # Sidebar Menu
 menu = st.sidebar.radio("📂 Menu Navigasi", ["🏠 Beranda", "📁 Upload Dataset", "🧪 Prediksi", "📊 Evaluasi Model", "ℹ️ Tentang"])
@@ -168,12 +191,10 @@ elif menu == "ℹ️ Tentang":
     - 📈 Fitur: Upload dataset, prediksi kelulusan, evaluasi model
     - 💻 Dibuat dengan Python + Streamlit
 
-    Dibuat oleh:  
-    **👨‍💻 Rian Fauza Dinata** — 312210083
-                  
-    **👩‍💻 Mohammad Azmi Abdussyukur** — 312210109
-                 
-    **👩‍💻MICHAEL TOGA JUNIOR SINAGA** — 312310774
+    Dibuat oleh Kelompok 6:  
+    - 👨‍💻 Rian Fauza Dinata — 312210083
+    - 👨‍💻 Mohammad Azmi Abdussyukur — 312210109
+    - 👨‍💻 Michael Toga Junior Sinaga — 312310774
 
     Terima kasih sudah mencoba aplikasi ini! Semoga bermanfaat ✨
     """)
