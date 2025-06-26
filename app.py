@@ -13,7 +13,7 @@ import base64
 
 # Konfigurasi halaman
 st.set_page_config(page_title="📊 Dashboard Kelulusan Mahasiswa", layout="wide", initial_sidebar_state="expanded")
-if "welcome_sharingan" not in st.session_state:
+if "welcome_animasi" not in st.session_state:
     components.html(f"""
         <style>
         .zoom-container {{
@@ -29,7 +29,7 @@ if "welcome_sharingan" not in st.session_state:
         </div>
     """, height=700)
 
-    st.session_state.welcome_sharingan = True
+    st.session_state.welcome_animasi = True
     st.rerun()
     st.stop()
 
