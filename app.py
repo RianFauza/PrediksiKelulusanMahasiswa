@@ -28,7 +28,7 @@ if "welcome_animasi" not in st.session_state:
         }
         </style>
         <div class='zoom-container'>
-            <img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWVzZnNyZnFiMW5hcGlmamc0a2l1cHNtc3VldmFnM3BvN2Z2NHd5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K9GWAtJoaaIy7vSCW8/giphy.gif' width='400'/>
+            <img src='Happy Dance GIF.gif' width='400'/>
         </div>
     """, height=450)
 
