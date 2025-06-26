@@ -9,10 +9,33 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit.components.v1 as components
+import time
 
 
 # Konfigurasi halaman
 st.set_page_config(page_title="📊 Dashboard Kelulusan Mahasiswa", layout="wide", initial_sidebar_state="expanded")
+
+# Animasi intro hanya sekali tampil
+if "welcome_animasi" not in st.session_state:
+    st.session_state.welcome_animasi = True
+
+    components.html("""
+        <style>
+        .zoom-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+        <div class='zoom-container'>
+            <img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWVzZnNyZnFiMW5hcGlmamc0a2l1cHNtc3VldmFnM3BvN2Z2NHd5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K9GWAtJoaaIy7vSCW8/giphy.gif' width='400'/>
+        </div>
+    """, height=450)
+
+    # Menandakan animasi sudah selesai
+    time.sleep(3)
+    st.session_state.welcome_animasi = False
+    st.experimental_rerun()  # Meminta aplikasi untuk me-refresh dan melanjutkan ke beranda
 
 # Animasi balon awal saat pertama kali membuka aplikasi
 if "welcome_balloon" not in st.session_state:
