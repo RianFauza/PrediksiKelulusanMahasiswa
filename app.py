@@ -33,7 +33,7 @@ if "welcome_animasi" not in st.session_state:
     """, height=450)
 
     # Menandakan animasi sudah selesai
-    time.sleep(1)
+    time.sleep(0,2)
     st.session_state.welcome_animasi = False
     st.stop()  # Meminta aplikasi untuk me-refresh dan melanjutkan ke beranda
 
