@@ -30,9 +30,8 @@ if "welcome_sharingan" not in st.session_state:
         </div>
     """, height=700)
 
-    time.sleep(3)
+    time.sleep(2)
     st.session_state.welcome_sharingan = True
-    st.stop()
 
 # Sidebar Menu
 menu = st.sidebar.radio("📂 Menu Navigasi", ["🏠 Beranda", "📁 Upload Dataset", "🧪 Prediksi", "📊 Evaluasi Model", "ℹ️ Tentang"])
