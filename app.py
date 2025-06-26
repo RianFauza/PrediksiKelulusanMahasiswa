@@ -33,7 +33,7 @@ if "welcome_animasi" not in st.session_state:
     """, height=450)
 
     # Menandakan animasi sudah selesai
-    time.sleep(3)
+    time.sleep(5)
     st.session_state.welcome_animasi = False
     st.rerun()
 
