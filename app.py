@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import time
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
@@ -14,24 +13,11 @@ import streamlit.components.v1 as components
 
 # Konfigurasi halaman
 st.set_page_config(page_title="📊 Dashboard Kelulusan Mahasiswa", layout="wide", initial_sidebar_state="expanded")
-if "welcome_sharingan" not in st.session_state:
-    components.html(f"""
-        <style>
-        .zoom-container {{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: zoomIn 3s ease-out forwards;
-        }}
-        </style>
 
-        <div class='zoom-container'>
-            <img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnV6amMwM3U1cmc2YjZlbmJuMm8weWNoaXlqbWRjcGtqMWttYjY1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K9GWAtJoaaIy7vSCW8/giphy.gif' style='width: 80vw; max-width: 560px;'/>
-        </div>
-    """, height=700)
-
-    time.sleep(2)
-    st.session_state.welcome_sharingan = True
+# Animasi balon awal saat pertama kali membuka aplikasi
+if "welcome_balloon" not in st.session_state:
+    st.balloons()
+    st.session_state.welcome_balloon = True
 
 # Sidebar Menu
 menu = st.sidebar.radio("📂 Menu Navigasi", ["🏠 Beranda", "📁 Upload Dataset", "🧪 Prediksi", "📊 Evaluasi Model", "ℹ️ Tentang"])
