@@ -29,10 +29,10 @@ if "welcome_sharingan" not in st.session_state:
         </div>
     """, height=700)
 
-    import time
-    time.sleep(3)
-    st.session_state.welcome_sharingan = True
-    st.experimental_rerun()
+    if st.button("▶️ Mulai Aplikasi"):
+        st.session_state.welcome_sharingan = True
+        st.rerun()
+    st.stop()
 
 
 # Sidebar Menu
