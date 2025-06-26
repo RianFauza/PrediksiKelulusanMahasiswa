@@ -35,7 +35,7 @@ if "welcome_animasi" not in st.session_state:
     # Menandakan animasi sudah selesai
     time.sleep(1)
     st.session_state.welcome_animasi = False
-    st.stop()
+    st.rerun()
 
 # Animasi balon awal saat pertama kali membuka aplikasi
 if "welcome_balloon" not in st.session_state:
