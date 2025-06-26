@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
@@ -9,14 +10,11 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit.components.v1 as components
-import base64
+
 
 # Konfigurasi halaman
 st.set_page_config(page_title="📊 Dashboard Kelulusan Mahasiswa", layout="wide", initial_sidebar_state="expanded")
 if "welcome_sharingan" not in st.session_state:
-    st.session_state.welcome_sharingan = False
-
-if not st.session_state.welcome_sharingan:
     components.html(f"""
         <style>
         .zoom-container {{
@@ -32,11 +30,9 @@ if not st.session_state.welcome_sharingan:
         </div>
     """, height=700)
 
-    import time
     time.sleep(3)
     st.session_state.welcome_sharingan = True
-    st.stop()
-
+    st.experimental_rerun()
 
 # Sidebar Menu
 menu = st.sidebar.radio("📂 Menu Navigasi", ["🏠 Beranda", "📁 Upload Dataset", "🧪 Prediksi", "📊 Evaluasi Model", "ℹ️ Tentang"])
@@ -194,7 +190,7 @@ elif menu == "ℹ️ Tentang":
     - 📈 Fitur: Upload dataset, prediksi kelulusan, evaluasi model
     - 💻 Dibuat dengan Python + Streamlit
 
-    Dibuat oleh Kelompok 6:  
+    Dibuat oleh:  
     - 👨‍💻 Rian Fauza Dinata — 312210083
     - 👨‍💻 Mohammad Azmi Abdussyukur — 312210109
     - 👨‍💻 Michael Toga Junior Sinaga — 312310774
