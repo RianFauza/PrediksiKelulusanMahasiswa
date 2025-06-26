@@ -28,14 +28,14 @@ if "welcome_animasi" not in st.session_state:
         }
         </style>
         <div class='zoom-container'>
-            <img src='Happy Dance GIF.gif' width='400'/>
+            <img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWVzZnNyZnFiMW5hcGlmamc0a2l1cHNtc3VldmFnM3BvN2Z2NHd5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K9GWAtJoaaIy7vSCW8/giphy.gif' width='400'/>
         </div>
     """, height=450)
 
     # Menandakan animasi sudah selesai
     time.sleep(0)
     st.session_state.welcome_animasi = False
-    st.stop()  # Meminta aplikasi untuk me-refresh dan melanjutkan ke beranda
+    st.experimental_rerun()  # Meminta aplikasi untuk me-refresh dan melanjutkan ke beranda
 
 # Animasi balon awal saat pertama kali membuka aplikasi
 if "welcome_balloon" not in st.session_state:
